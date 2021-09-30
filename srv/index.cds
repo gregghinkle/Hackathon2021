@@ -23,7 +23,7 @@ annotate FlightsService.FlightDetails with @(
 );
 
 annotate FlightsService.FlightDetails with {
-    carrid @title:'Carrier ID';
+    carrid @title:'Airline ID';
     connid @title:'Connection #';
     cityFrom @title:'From City';
     cityTo @title:'To City';
