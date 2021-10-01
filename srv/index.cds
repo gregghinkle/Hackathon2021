@@ -10,12 +10,12 @@ annotate FlightsService.FlightDetails with @(
             {$Type : 'UI.DataField', Value: cityTo},
             {$Type : 'UI.DataField', Value: seatsOcc},
             {$Type : 'UI.DataField', Value: airplane.planeType},
+            {$Type : 'UI.DataField', Value: airplane.planeManu},
             {$Type : 'UI.DataField', Value: airplane.planeImage}
         ],
         HeaderInfo: {
             TypeName: 'Flight',
             TypeNamePlural: 'Flights',
-            ImageUrl : airplane.planeImage,
             Title: {Label : 'carrid', $Type : 'UI.DataField', Value: carrid},
             Description: {Label : 'connid', $Type : 'UI.DataField', Value: connid}
         }
@@ -32,5 +32,6 @@ annotate FlightsService.FlightDetails with {
 
 annotate FlightsService.Airplanes with {
     planeType @title:'Airplane Type';
+    planeManu @title:'Airplane Manufacturer';
     planeImage @title:'Seat Map' @Core.MediaType : 'image/jpeg';
 }
