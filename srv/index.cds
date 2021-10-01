@@ -2,22 +2,22 @@ using from './flights-service';
 
 annotate FlightsService.FlightDetails with @(
     UI: {
-        Identification: [ {Value: carrid} ],
-        SelectionFields: [ carrid ],
+        SelectionFields: [ carrid, connid ],
         LineItem: [
-            {Value: carrid},
-            {Value: connid},
-            {Value: cityFrom},
-            {Value: cityTo},
-            {Value: seatsOcc},
-            {Value: airplane.planeType},
-            {Value: airplane.planeImage}
+            {$Type : 'UI.DataField', Value: carrid},
+            {$Type : 'UI.DataField', Value: connid},
+            {$Type : 'UI.DataField', Value: cityFrom},
+            {$Type : 'UI.DataField', Value: cityTo},
+            {$Type : 'UI.DataField', Value: seatsOcc},
+            {$Type : 'UI.DataField', Value: airplane.planeType},
+            {$Type : 'UI.DataField', Value: airplane.planeImage}
         ],
         HeaderInfo: {
             TypeName: 'Flight',
             TypeNamePlural: 'Flights',
-            Title: {Value: carrid},
-            Description: {Value: carrid}
+            ImageUrl : airplane.planeImage,
+            Title: {Label : 'carrid', $Type : 'UI.DataField', Value: carrid},
+            Description: {Label : 'connid', $Type : 'UI.DataField', Value: connid}
         }
     }
 );
@@ -32,5 +32,5 @@ annotate FlightsService.FlightDetails with {
 
 annotate FlightsService.Airplanes with {
     planeType @title:'Airplane Type';
-    planeImage @title:'Seat Map';
+    planeImage @title:'Seat Map' @Core.MediaType : 'image/jpeg';
 }

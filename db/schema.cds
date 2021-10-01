@@ -11,6 +11,6 @@ entity FlightDetails {
 
 entity Airplanes {
   key planeType  : String(10);
-  planeImage     : LargeBinary;
+  planeImage     : LargeBinary @Core.MediaType: 'image/jpeg';
   flights        : Association to many FlightDetails on flights.airplane = $self;
 }
